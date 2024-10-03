@@ -20,11 +20,15 @@ public class Matriser {
 		int i;
 
 	for(int enkelTabell[] : matrise) {
-		tekst += "\n";
 		for( i = 0 ; i < enkelTabell.length; i++) {
 			tekst += enkelTabell[i] + " ";
-		}
-	}//System.out.print(tekst);
+			if(i+1 ==enkelTabell.length) {
+			tekst += "\n";
+			}
+			}
+		
+	}
+
 	return tekst;
 	}
 
@@ -54,8 +58,7 @@ public class Matriser {
 		if (a==null || b==null) {
 			return false;
 		}
-		
-	
+		 
 		if (a.length != b.length) {
 			return false;
 		}
@@ -77,10 +80,19 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
-
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
-	
+		int i = 0;
+		int e = 0;
+		int nyTabell[][] = new int [matrise.length][matrise[0].length];
+		
+		for(i = 0 ; i < matrise.length; i++) {
+			for(e = 0; e < matrise[i].length; e++) {
+			
+			int middlerTidlig = matrise[i][e];
+			
+			nyTabell[e][i] = middlerTidlig;
+			
+			}}
+		return nyTabell;
 	}
 
 	// f)
